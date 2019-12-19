@@ -13,6 +13,6 @@ Utilizar una herramienta de diagramado como Google Draw o DIA para diseñar y es
 
 ### Parte 2 
 
-Crawler con scrapy 
+Crawler con scrapy URL http://quotes.toscrape.com
 
 https://drive.google.com/open?id=1-zVe1fDJnStt0J40_73lUqD7XSC9-zTZ
