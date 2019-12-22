@@ -17,7 +17,7 @@ Todo irá a un cluster de Hadoop en mi PC + Docker.
 Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso lo envio como un email a mano.
 
 ### Diagrama
-https://www.draw.io/#Holgaalvaro%2FBig-Data-Architecture%2Fmaster%2Fbdarquitecture.xml
+bdarquitecture.png
 
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
