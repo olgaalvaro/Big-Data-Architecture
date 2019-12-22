@@ -18,6 +18,7 @@ Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso l
 
 ### Diagrama
 https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/bdarquitecture.png
+https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
