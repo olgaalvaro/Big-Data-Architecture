@@ -2,13 +2,13 @@
 Big Data Architecture Repository
 
 ## Detalles de Práctica en Arquitectura
-Recomendador de Airbnb por Lifestyle (restaurantes mejor valorados, tiendas de moda, ...) 
+Recomendador de Airbnb por Idealista (alquileres de pisos en buen estado,  ...) 
 
 ### Estrategia del DAaaS
-Reporte mensual de los mejores 50 pisos para alquilar de Airbnb en Madrid.
+Reporte mensual de los pisos en mejor estado para alquilar de Airbnb en Madrid.
 
 ### Arquitectura del DAaaS
-Crawler con scrapy (Colaboratory) que lee de la URL de Yelp.
+Crawler con scrapy (Colaboratory) que lee de la URL de Idealista.
 Los ficheros los meto en Hadoop y los junto con el dataset de Airbnb (no se como) y hago un mapreduce para obtener el top 50 en un archivo que luego enviare por correo.
 
 Todo irá a un cluster de Hadoop en mi PC + Docker.
