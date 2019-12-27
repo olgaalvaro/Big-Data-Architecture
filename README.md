@@ -8,7 +8,7 @@ Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Ma
 Estadística semanal por lotes de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid.
 
 ### Arquitectura del DAaaS
-Crawler con scrapy (Colaboratory) que lee de la web de Idealista https://www.idealista.com/ para obtener en un fichero 'datatotal_idealistatoscrape.csv', las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para así, enriquecer el dataset de Airbnb.
+Crawler con scrapy (Colaboratory) que lee de la web de Idealista https://www.idealista.com/ para obtener, mediante la técnica css selectors, un fichero 'datatotal_idealistatoscrape.csv', las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para así, enriquecer el dataset de Airbnb.
 
 Utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como del fichero 'datatotal_idealistatoscrape.csv' obtenido en la operativa anterior.
 Realizaremos el análisis de los datos junto con la preparación y limpiez de ellos, para su extracción ¿?.  
