@@ -4,7 +4,7 @@ Big Data Architecture Repository
 ## Detalles de Práctica en Arquitectura
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar/comprar/compartir viviendas.
 
-Procederemos a crawlear + scrapear la web idealista.com para obtener en un fichero 'datatotal_idealistatoscrape.csv', las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para enriquecer el dataser de Airbnb.
+Procederemos a crawlear + scrapear la web idealista.com para obtener en un fichero 'datatotal_idealistatoscrape.csv', las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para así, enriquecer el dataset de Airbnb.
 
 ### Definición de la estrategia del DAaaS
 Reporte semanal de los pisos en mejor estado para alquilar de Airbnb en Madrid.
