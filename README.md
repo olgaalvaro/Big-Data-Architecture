@@ -15,8 +15,8 @@ Se contemplan dos técnicas para la obtención de datos:
 2. Scraping a la API Idealista previo acceso https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/accesoapidealista.PNG para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
 
 
-En ambos casos, utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como del fichero 'datatotal_idealistatoscrape.csv' obtenido en la operativa anterior.
-Realizaremos el análisis de los datos junto con la preparación y limpiez de ellos, para su extracción ¿?.  
+En ambos casos, utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como de los ficheros obtenidos en la operativa anterior.
+Realizaremos el análisis de los datos junto con la preparación y limpieza de ellos, para su extracción ¿?.  
 
 Los ficheros los meto en Hadoop y los junto con el dataset de Airbnb (no se como) y hago un mapreduce para obtener el top 50 en un archivo que luego enviare por correo.
 
@@ -29,6 +29,15 @@ Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso l
 https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/bdarquitecture.png
 
 https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
+
+
+### Parte 2 
+
+Crawler con scrapy URL https://www.idealista.com/alquiler-viviendas/madrid-madrid/con-buen-estado/
+https://drive.google.com/open?id=1tvhfnKcaWR1MTB1SU_TT84YjDDoeKtsW
+
+Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search
+https://colab.research.google.com/drive/1RpLVXAOt3IDpv3lNgt4A4kvFrtsZ3jUp
 
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
