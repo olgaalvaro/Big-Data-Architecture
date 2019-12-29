@@ -26,6 +26,8 @@ Todo irá a un cluster de Hadoop en mi PC + Docker.
 Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso lo envio como un email a mano.
 
 ### Diagrama
+Diagrama del flujo de datos y herramientas utilizadas
+
 https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/bdarquitecture.png
 
 https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
@@ -33,23 +35,13 @@ https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 
 ### Parte 2 
 
-Crawler con scrapy URL https://www.idealista.com/alquiler-viviendas/madrid-madrid/con-buen-estado/
+1. Crawler con scrapy URL https://www.idealista.com/alquiler-viviendas/madrid-madrid/con-buen-estado/
 https://drive.google.com/open?id=1tvhfnKcaWR1MTB1SU_TT84YjDDoeKtsW
 
-Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search
+2. Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search
 https://colab.research.google.com/drive/1RpLVXAOt3IDpv3lNgt4A4kvFrtsZ3jUp
-xx
+
+
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
 
-
-
-### Parte 1
-
-Utilizar una herramienta de diagramado como Google Draw o DIA para diseñar y especificar el flujo de datos y herramientas utilizadas
-
-### Parte 2 
-
-Crawler con scrapy URL http://quotes.toscrape.com
-
-https://drive.google.com/open?id=1-zVe1fDJnStt0J40_73lUqD7XSC9-zTZ
