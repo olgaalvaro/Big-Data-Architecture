@@ -12,12 +12,10 @@ Se contemplan dos técnicas para la obtención de datos:
 
 1. Crawler con scrapy (Colaboratory) que lee de la web de Idealista https://www.idealista.com/ para obtener, mediante la técnica css selectors, un fichero 'datatotal_idealistatoscrape.csv', con las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para así, enriquecer el dataset de Airbnb.
 
-2. Scraping a la API Idealista previo acceso  para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
-En este caso se
+2. Scraping a la API Idealista previo acceso https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/accesoapidealista.PNG para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
 
 
-
-Utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como del fichero 'datatotal_idealistatoscrape.csv' obtenido en la operativa anterior.
+En ambos casos, utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como del fichero 'datatotal_idealistatoscrape.csv' obtenido en la operativa anterior.
 Realizaremos el análisis de los datos junto con la preparación y limpiez de ellos, para su extracción ¿?.  
 
 Los ficheros los meto en Hadoop y los junto con el dataset de Airbnb (no se como) y hago un mapreduce para obtener el top 50 en un archivo que luego enviare por correo.
