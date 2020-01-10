@@ -15,6 +15,8 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 2. Scraping a la API Idealista previo acceso https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/accesoapidealista.PNG para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
 
+1/2 ejecutar en Cloud Function
+
 Insertar el dataset de Airbnb en HIVE (reside en Google Store)
 En ambos casos, utilizaremos HIVE para el almacenamiento de los datos en un segmento de de Google Cloud, tanto del dataset de Airbnb como de los ficheros obtenidos en la operativa anterior.
 Google Store cogere los datos para crear 2 tablas de HIVE, y realizare una query con un JOIN que reste las distancias entre cada airbnb .
@@ -28,6 +30,28 @@ Todo irá a un cluster de Hadoop en mi PC + Docker.
 
 ### Operating Model
 Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso lo envio como un email a mano.
+
+Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de OK. Y esto disparará el Cloud Function y guardará el resultado en un directorio del Segmento llamado input_yelp.
+
+En el segmento siempre existirá un directorio llamado input_airbnb.
+
+Seguire el estandar de levantar el cluster solamente cuando queira regenerar el TOP, es decir cada mañana levantaré el cluster  a mano, enviaré las tablas de:
+
+- crear tabla de airbnb
+- crear tabla de idealista
+- load data inpath de gc://xxxx:input_idealista into table idealista
+- load data inpath de gc://xxxx:input_airbnb into table airbnb
+- SELET JOIN INTO DIRECTORY 'gs//output/results'
+
+Apago el cluster y me voy a dormir.
+Web con un link directo a Google Storage Segment Object.
+
+#### Desarrollo
+
+- Cloud function
+- Query de HIVE
+- Pantallazo/video (parte 3 en adelante)
+
 
 ### Diagrama
 Diagrama del flujo de datos y herramientas utilizadas
