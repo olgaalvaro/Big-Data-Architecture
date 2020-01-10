@@ -5,7 +5,8 @@ Big Data Architecture Repository
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar, comprar y/o compartir viviendas.
 
 ### Definición de la estrategia del DAaaS
-Estadística semanal por lotes de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid.
+Estadística semanal por lotes de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
+Limpieza de datos (Talend)
 
 ### Arquitectura del DAaaS
 Se contemplan dos técnicas para el proceso de obtención de datos:
@@ -14,8 +15,11 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 2. Scraping a la API Idealista previo acceso https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/accesoapidealista.PNG para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
 
-
-En ambos casos, utilizaremos Hadoop para el almacenamiento de los datos, tanto del dataset de Airbnb como de los ficheros obtenidos en la operativa anterior.
+Insertar el dataset de Airbnb en HIVE (reside en Google Store)
+En ambos casos, utilizaremos HIVE para el almacenamiento de los datos en un segmento de de Google Cloud, tanto del dataset de Airbnb como de los ficheros obtenidos en la operativa anterior.
+Google Store cogere los datos para crear 2 tablas de HIVE, y realizare una query con un JOIN que reste las distancias entre cada airbnb .
+De la query obtendré el TOP de apartamentos 
+El resultado de la query estará en Google Store
 Realizaremos el análisis de los datos junto con la preparación y limpieza de ellos, para su extracción ¿?.  
 
 Los ficheros los meto en Hadoop y los junto con el dataset de Airbnb (no se como) y hago un mapreduce para obtener el top 50 en un archivo que luego enviare por correo.
