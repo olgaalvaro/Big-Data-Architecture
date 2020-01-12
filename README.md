@@ -21,7 +21,7 @@ Enumeramos los pasos a seguir:
 
 - Insertar el dataset de Airbnb en HIVE.
 - Para el proceso de extracción de datos mediante Scraping a una API aplicaré una Cloud Function.
-- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage.
+- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista)
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
 
 ### Operating Model
