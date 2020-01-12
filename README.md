@@ -17,7 +17,9 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 2. Scraping a la API Idealista previo acceso https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/accesoapidealista.PNG para igualmente extraer mediante la técnica css selectors, un fichero 'data_apidealistapipe.csv', una muestra de viviendas en Madrid con la información referente a su dirección, distrito, tipo de propiedad, precio, tamaño en m2, nº habitaciones, nº baños, si es exterior, longitud, latitud, url y el precio por área.
 
-* Insertar el dataset de Airbnb en HIVE.
+Enumeramos los pasos a seguir:
+
+- Insertar el dataset de Airbnb en HIVE.
 - Para el proceso de extracción de datos mediante Scraping a una API aplicaré una Cloud Function.
 - Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage.
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
