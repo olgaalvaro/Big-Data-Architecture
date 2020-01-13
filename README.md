@@ -44,7 +44,8 @@ Web con un link directo a Google Storage Segment Object.
 
 #### Desarrollo
 
-- Cloud function
+- Cloud function para almacenar el dataset de Airbnb en el segmento referenciado de Google Gloud Storage.
+
 - Query de HIVE
 - Pantallazo/video (parte 3 en adelante)
 
