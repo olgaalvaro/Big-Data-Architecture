@@ -60,12 +60,10 @@ https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 ### Parte 2 
 
 1. Crawler con scrapy URL https://www.idealista.com/alquiler-viviendas/madrid-madrid/con-buen-estado/
-https://drive.google.com/open?id=1mKBOby1MsfzKEfmQ3sHiVK_lJmO8A7yr
 https://colab.research.google.com/drive/1mKBOby1MsfzKEfmQ3sHiVK_lJmO8A7yr
 
 2. Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search
-https://colab.research.google.com/drive/1RpLVXAOt3IDpv3lNgt4A4kvFrtsZ3jUp
-
+https://colab.research.google.com/drive/1Nb-uhKZy3ebiOJKar_mYJXPkDcmZoV6z
 
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
