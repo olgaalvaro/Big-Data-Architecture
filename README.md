@@ -44,6 +44,8 @@ Web con un link directo a Google Storage Segment Object.
 
 #### Desarrollo
 
+- Insertar el dataset de Airbnb en HIVE.
+
 - Cloud function para almacenar el resultado del fichero de la parte 2 en el segmento referenciado de Google Gloud Storage.
   
   https://colab.research.google.com/drive/145Od49s4Dx85yRQhUoAdAzXj9C5H5x6-
