@@ -63,8 +63,7 @@ https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 1. Crawler con scrapy URL https://www.idealista.com/alquiler-viviendas/madrid-madrid/con-buen-estado/
 https://colab.research.google.com/drive/1mKBOby1MsfzKEfmQ3sHiVK_lJmO8A7yr
 
-2. Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search
-
+2. Scrapy a la API de Idealista URL https://api.idealista.com/3.5/es/search  
 https://colab.research.google.com/drive/1Nb-uhKZy3ebiOJKar_mYJXPkDcmZoV6z
 
 En este apartado, el resultado de los ficheros (csv separados por pipes) se copian en el segmento 'bdarchitecture_segidealista' de Google Cloud Storage. Pero también se contempla la creación de un Cloud Function para reproducir este apartado tanto para el fichero resultante de este punto como del dataset de Airbnb.
