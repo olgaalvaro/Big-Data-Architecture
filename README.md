@@ -72,6 +72,16 @@ https://colab.research.google.com/drive/1Nb-uhKZy3ebiOJKar_mYJXPkDcmZoV6z
 
 En este apartado, el resultado de los ficheros (csv separados por pipes) se copian en el segmento 'bdarchitecture_segidealista' de Google Cloud Storage. Pero también se contempla la creación de un Cloud Function para reproducir este apartado para el fichero resultante de este punto.
 
+### Parte 3
+
+Configuración de un clúster con al menos 3 contenedores a través del proveedor Google Cloud Platform-Dataproc.
+
+- Crear el clúster por distintas vías en Dataproc (Google Cloud Platform)
+- Crear regla de cortafuegos
+- Verificar el acceso al clúster y hdfs a traves de la URL://IPexternanodomaestro y puertos correspondientes
+
+https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
+
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
 xx
