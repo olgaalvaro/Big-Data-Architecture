@@ -76,11 +76,19 @@ En este apartado, el resultado de los ficheros (csv separados por pipes) se copi
 
 Configuración de un clúster con al menos 3 contenedores a través del proveedor Google Cloud Platform-Dataproc.
 
-- Crear el clúster por distintas vías en Dataproc (Google Cloud Platform)
-- Crear regla de cortafuegos
-- Verificar el acceso al clúster y hdfs a traves de la URL://IPexternanodomaestro y puertos correspondientes
+1. Crear el clúster por distintas vías en Dataproc (Google Cloud Platform)
+2. Crear regla de cortafuegos
+3. Verificar el acceso al clúster y hdfs a traves de la URL://IPexternanodomaestro y puertos correspondientes
 
 https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
+
+
+#### Parte 4
+
+Subir los archivos extraídos durante la parte 2 al cluster de Hadoop e insertarlos en el HDFS.
+
+Realizar la tarea de procesamiento de datos sobre los datos extraídos utilizando WordCount.
+
 
 ### Enunciado
 Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
