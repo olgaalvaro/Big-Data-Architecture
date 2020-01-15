@@ -19,7 +19,7 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 Enumeramos los pasos a seguir:
 
-- Insertar el dataset de Airbnb en HIVE con los jobs necesarios para:
+- Insertar el dataset de Airbnb en HIVE mediante jobs o tareas.
 - Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 (crawler Scraping a una API aplicaré una Cloud Function.
 - Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista)
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
@@ -48,6 +48,7 @@ Web con un link directo a Google Storage Segment Object.
   a) Crear tabla de airbnb con la estructura del dataset de Airbnb en HIVE -- (job o tarea: **create_table_airbnb**)
   
   b) Volcar el dataset de Airbnb en la tabla del punto anterior con el comando -- (job o tarea: **volcar_dataset_airbnb_hive**)
+  
      LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings-reducida.csv' INTO TABLE airbnb;
 
    https://colab.research.google.com/drive/175qx9RyULP-_exgftzRnbmr5SazrNdQG
