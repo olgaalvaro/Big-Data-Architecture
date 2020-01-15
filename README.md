@@ -32,10 +32,10 @@ En el segmento **bdarchitecture_segidealista** siempre existirá un directorio l
 
 Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP por las vías indicadas en el apartado 2, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
 
-- crear tabla de airbnb (job o tarea: create table airbnb)
+- crear tabla de airbnb 
 - crear tabla de idealista
 - load data inpath de gc://xxxx:input_idealista into table idealista 
-- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings-reducida.csv' INTO TABLE airbnb;
+- LOAD DATA INPATH  'gs://nombredelsegmeto/input_airbnb/airbnb-listings.csv' INTO TABLE airbnb;
 - SELET JOIN INTO DIRECTORY 'gs//output/results'
 
 Una vez concluidas dichas tareas, eliminaré el cluster.
@@ -46,6 +46,7 @@ Web con un link directo a Google Storage Segment Object.
 - Insertar el dataset de Airbnb en HIVE.
 
   a) Crear tabla de airbnb con la estructura del dataset de Airbnb en HIVE -- (job o tarea: **create_table_airbnb**)
+  
   b) Volcar el dataset de Airbnb en la tabla del punto anterior con el comando -- (job o tarea: **volcar_dataset_airbnb_hive**)
      LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings-reducida.csv' INTO TABLE airbnb;
 
