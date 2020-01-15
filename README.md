@@ -19,7 +19,7 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 Enumeramos los pasos a seguir:
 
-- Insertar el dataset de Airbnb en HIVE.
+- Insertar el dataset de Airbnb en HIVE con los jobs necesarios.
 
    https://colab.research.google.com/drive/175qx9RyULP-_exgftzRnbmr5SazrNdQG
    
@@ -28,18 +28,17 @@ Enumeramos los pasos a seguir:
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
 
 ### Operating Model
-Haré todo a mano, y sacaré el reporte final con un copyToLocal de hdfs y eso lo envio como un email a mano.
 
-Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de OK. Y esto disparará el Cloud Function y guardará el resultado en un directorio del Segmento llamado input_yelp.
+Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de Success!. Y esto disparará el Cloud Function y guardará el resultado en un directorio del Segmento llamado input_idealista.
 
-En el segmento siempre existirá un directorio llamado input_airbnb.
+En el segmento *bdarchitecture_segidealista* siempre existirá un directorio llamado input_airbnb.
 
-Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP, es decir cada mañana levantaré el cluster  a mano, enviaré las tablas de:
+Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
 
-- crear tabla de airbnb
+- crear tabla de airbnb (job o tarea: create table airbnb)
 - crear tabla de idealista
-- load data inpath de gc://xxxx:input_idealista into table idealista
-- load data inpath de gc://xxxx:input_airbnb into table airbnb
+- load data inpath de gc://xxxx:input_idealista into table idealista 
+- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings-reducida.csv' INTO TABLE airbnb;
 - SELET JOIN INTO DIRECTORY 'gs//output/results'
 
 Una vez concluidas dichas tareas, eliminaré el cluster.
