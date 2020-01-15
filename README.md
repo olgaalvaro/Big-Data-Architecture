@@ -19,21 +19,18 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 
 Enumeramos los pasos a seguir:
 
-- Insertar el dataset de Airbnb en HIVE con los jobs necesarios.
-
-   https://colab.research.google.com/drive/175qx9RyULP-_exgftzRnbmr5SazrNdQG
-   
-- Para el proceso de extracción de datos mediante Scraping a una API aplicaré una Cloud Function.
+- Insertar el dataset de Airbnb en HIVE con los jobs necesarios para:
+- Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 (crawler Scraping a una API aplicaré una Cloud Function.
 - Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista)
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
 
 ### Operating Model
 
-Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de Success!. Y esto disparará el Cloud Function y guardará el resultado en un directorio del Segmento llamado input_idealista.
+Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de Success!. Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input_idealista.
 
 En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb.
 
-Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
+Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP por las vías indicadas en el apartado 2, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
 
 - crear tabla de airbnb (job o tarea: create table airbnb)
 - crear tabla de idealista
@@ -48,7 +45,13 @@ Web con un link directo a Google Storage Segment Object.
 
 - Insertar el dataset de Airbnb en HIVE.
 
-- Cloud function para almacenar el resultado del fichero de la parte 2 en el segmento referenciado de Google Gloud Storage.
+  a) Crear tabla de airbnb con la estructura del dataset de Airbnb en HIVE -- (job o tarea: **create_table_airbnb**)
+  b) Volcar el dataset de Airbnb en la tabla del punto anterior con el comando -- (job o tarea: **volcar_dataset_airbnb_hive**)
+     LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings-reducida.csv' INTO TABLE airbnb;
+
+   https://colab.research.google.com/drive/175qx9RyULP-_exgftzRnbmr5SazrNdQG
+   
+- Cloud functions para almacenar el resultado de los ficheros obtenidos en el apartado 2 en el segmento referenciado de Google Gloud Storage.
   
   https://colab.research.google.com/drive/145Od49s4Dx85yRQhUoAdAzXj9C5H5x6-
 
