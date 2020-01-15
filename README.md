@@ -31,7 +31,7 @@ Enumeramos los pasos a seguir:
 
 Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de Success!. Y esto disparará el Cloud Function y guardará el resultado en un directorio del Segmento llamado input_idealista.
 
-En el segmento *bdarchitecture_segidealista* siempre existirá un directorio llamado input_airbnb.
+En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb.
 
 Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
 
