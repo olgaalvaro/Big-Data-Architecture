@@ -92,9 +92,11 @@ https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
 
 ### Parte 4
 
-Subir los archivos extraídos durante la parte 2 al cluster de Hadoop e insertarlos en el HDFS.
+1. Subir los archivos extraídos durante la parte 2 al cluster de Hadoop e insertarlos en el HDFS.
 
-Realizar la tarea de procesamiento de datos sobre los datos extraídos utilizando WordCount.
+2. Realizar la tarea de procesamiento de datos sobre los datos extraídos utilizando WordCount.
+
+https://colab.research.google.com/drive/12Pyx_qLslp3eQpcterEVwCiW467Lrlbe
 
 
 ### Enunciado
