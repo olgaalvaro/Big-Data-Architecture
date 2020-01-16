@@ -5,13 +5,13 @@ Big Data Architecture Repository
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar, comprar y/o compartir viviendas.
 
 ### Definición de la estrategia del DAaaS
-Estadística semanal por lotes de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
+Estadística semanal de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
 Limpieza de datos (Talend Data Preparation)
 
 ### Arquitectura del DAaaS
 Arquitectura CLOUD basada en Scraping API + Google Coud Storage + HIVE + Dataproc
 
-Se contemplan dos técnicas para el proceso de obtención de datos:
+Se contemplan dos técnicas para el proceso de obtención de datos en fichero csv:
 
 1. Crawler con scrapy (Colaboratory) que lee de la web de Idealista https://www.idealista.com/ para obtener, mediante la técnica css selectors, un fichero 'datatotal_idealistatoscrape.csv', con las viviendas de Madrid en mejor estado con la información referente a su dirección, precio, si tiene o no garaje, detalles (nº de habitaciones, m2, planta y si es interior o exterior) y una breve descripción para así, enriquecer el dataset de Airbnb.
 
@@ -20,7 +20,7 @@ Se contemplan dos técnicas para el proceso de obtención de datos:
 Enumeramos los pasos a seguir:
 
 - Insertar el dataset de Airbnb en HIVE mediante jobs o tareas.
-- Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 (crawler Scraping a una API aplicaré una Cloud Function.
+- Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 (crawler ó scraping a una API aplicaré una Cloud Function).
 - Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista)
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
 
