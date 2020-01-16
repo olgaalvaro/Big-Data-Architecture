@@ -6,7 +6,6 @@ Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Ma
 
 ### Definición de la estrategia del DAaaS
 Informe diario de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
-Limpieza de datos (Talend Data Preparation)
 
 ### Arquitectura del DAaaS
 
@@ -22,7 +21,7 @@ Enumeramos los pasos a seguir:
 
 - Insertar el dataset de Airbnb en HIVE mediante jobs o tareas.
 - Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 aplicaré una Cloud Function.
-- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista).
+- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista). Previamente podemos proceder con la limpieza de los datos de ambos datasets, para así manejar datos de calidad en los siguientes pasos.
 - Crear las tablas en HIVE, con los datos del dataset y los datos del fichero resultante de la parte nº 2.
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según un rango de importes por noche disponible en Google Cloud Storage para cubrir las necesidades de todos los clientes según sus posibilidades económicas.
 - Almacenar el resultado del TOP de las mejores viviendas en Google Cloud Storage para por ejemplo su notificación por correo y con la posibilidad de guardar un histórico de los TOPs por si se precisa un análisis más completo.
