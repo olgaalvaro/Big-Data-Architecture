@@ -32,7 +32,7 @@ Enumeramos los pasos a seguir:
 
 Existe un operador que dispara el Cloud Function cada mañana desde Google Home, con un mensaje "Google, adelante con el scrapy a la  API del idealista.com". Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input/idealista con formato csv.
 
-En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb con el dataset de Airbnb distinguiendo si es la muestra reducida o completa.
+En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb con el dataset de Airbnb de la muestra reducida y completa.
 
 Operativa diaria de creación del clúster para a continuación, ejecutar  las siguientes tareas:
 
@@ -43,7 +43,7 @@ Operativa diaria de creación del clúster para a continuación, ejecutar  las s
 - SELET JOIN INTO DIRECTORY 'gs//output/results'
 
 Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores viviendas, se recomienda eliminar el clúster. 
-Web con un link directo a Google Storage Segment Object.
+Web con un link directo en Google Storage Segment Object para la descarga del resultado o notificación por correo adjuntando dicha información.
 
 
 #### Desarrollo
@@ -63,7 +63,6 @@ Web con un link directo a Google Storage Segment Object.
   https://colab.research.google.com/drive/145Od49s4Dx85yRQhUoAdAzXj9C5H5x6-
 
 - Query de HIVE
-- Pantallazo/video (parte 3 en adelante)
 
 
 ### Diagrama
