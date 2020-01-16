@@ -5,11 +5,12 @@ Big Data Architecture Repository
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar, comprar y/o compartir viviendas.
 
 ### Definición de la estrategia del DAaaS
-Estadística semanal de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
+Informe diario de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
 Limpieza de datos (Talend Data Preparation)
 
 ### Arquitectura del DAaaS
-Arquitectura CLOUD basada en Scraping API + Google Coud Storage + HIVE + Dataproc
+
+*Arquitectura CLOUD basada en Scraping API + Google Coud Storage + HIVE + Dataproc*
 
 Se contemplan dos técnicas para el proceso de obtención de datos en fichero csv:
 
@@ -20,26 +21,30 @@ Se contemplan dos técnicas para el proceso de obtención de datos en fichero cs
 Enumeramos los pasos a seguir:
 
 - Insertar el dataset de Airbnb en HIVE mediante jobs o tareas.
-- Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 (crawler ó scraping a una API aplicaré una Cloud Function).
-- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista)
-- Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según el importe por noche disponible en Google Cloud Storage.
+- Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 aplicaré una Cloud Function.
+- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista).
+- Crear las tablas en HIVE, con los datos del dataset y los datos del fichero resultante de la parte nº 2.
+- Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según un rango de importes por noche disponible en Google Cloud Storage para cubrir las necesidades de todos los clientes según sus posibilidades económicas.
+- Almacenar el resultado del TOP de las mejores viviendas en Google Cloud Storage para por ejemplo su notificación por correo y con la posibilidad de guardar un histórico de los TOPs por si se precisa un análisis más completo.
+- Desarrollar una web que muestre el resultado del TOP almacenado en Google Cloud Platform-Storage
 
 ### Operating Model
 
-Existe un operador que dispara el Cloud Function cada mañana con Google Home, con un mensaje de Success!. Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input_idealista.
+Existe un operador que dispara el Cloud Function cada mañana desde Google Home, con un mensaje "Google, adelante con el scrapy a la  API del idealista.com". Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input/idealista con formato csv.
 
-En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb.
+En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb con el dataset de Airbnb distinguiendo si es la muestra reducida o completa.
 
-Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el TOP por las vías indicadas en el apartado 2, es decir cada mañana levantaré el cluster, para ejecutar las siguientes tareas o jobs:
+Operativa diaria de creación del clúster para a continuación, ejecutar  las siguientes tareas:
 
 - crear tabla de airbnb 
 - crear tabla de idealista
-- load data inpath de gc://xxxx:input_idealista into table idealista 
-- LOAD DATA INPATH  'gs://nombredelsegmeto/input_airbnb/airbnb-listings.csv' INTO TABLE airbnb;
+- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input/idealista/ficheroparte2.csv' INTO TABLE idealista 
+- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings.csv' INTO TABLE airbnb;
 - SELET JOIN INTO DIRECTORY 'gs//output/results'
 
-Una vez concluidas dichas tareas, eliminaré el cluster.
+Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores viviendas, se recomienda eliminar el clúster. 
 Web con un link directo a Google Storage Segment Object.
+
 
 #### Desarrollo
 
