@@ -8,8 +8,7 @@ Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Ma
 Informe diario de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
 
 ### Arquitectura del DAaaS
-
-*Arquitectura CLOUD basada en Scraping API + Google Coud Storage + HIVE + Dataproc*
+*Arquitectura CLOUD basada en Scraping API + (Talend) + Google Coud Storage + HIVE + Dataproc*
 
 Se contemplan dos técnicas para el proceso de obtención de datos en fichero csv:
 
@@ -28,7 +27,6 @@ Enumeramos los pasos a seguir:
 - Desarrollar una web que muestre el resultado del TOP almacenado en Google Cloud Platform-Storage
 
 ### Operating Model
-
 Se programa una operativa diaria a través de un cron para la creación/eliminación del cluster con la misma configuración mediante llamada API Rest o desde Cloud Shell. 
 Un operador disparará el Cloud Function desde el Cloud Function cada mañana desde Google Home, con el mensaje de voz "Google, adelante con el scrapy a la  API del idealista". Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input/idealista con formato csv.
 
@@ -54,7 +52,7 @@ Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores vi
 Web con un link directo en Google Storage Segment Object para la descarga del resultado o notificación por correo adjuntando dicha información.
 
 
-#### Desarrollo
+### Desarrollo
 
 - Insertar el dataset de Airbnb en HIVE.
 
@@ -76,9 +74,7 @@ Web con un link directo en Google Storage Segment Object para la descarga del re
 ### Diagrama
 Diagrama del flujo de datos y herramientas utilizadas
 
-https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/bdarquitecture.png
-
-https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
+https://drive.google.com/file/d/18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 
 
 ### Parte 2 
