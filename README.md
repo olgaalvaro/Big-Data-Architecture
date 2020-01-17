@@ -109,6 +109,8 @@ https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
 https://colab.research.google.com/drive/12Pyx_qLslp3eQpcterEVwCiW467Lrlbe
 
 
-### Enunciado
-Diseñar, especificar y desplegar un datalake para el procesamiento de datos provenientes de fuentes de datos no estructurados extraídos mediante técnicas de scraping/crawling de sitios de dominio público.
-xx
+### Parte 5 
+
+Utilizar HIVE/Elastic/Kafka/Mongo para insertar los datos extraídos durante el Sprint 2 y realizar operaciones con los mismos.
+Indicar los pasos y las decisiones de diseño respecto a cómo organizar los datos.
+
