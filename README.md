@@ -5,7 +5,7 @@ Big Data Architecture Repository
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar, comprar y/o compartir viviendas.
 
 ### Definición de la estrategia del DAaaS
-Informe diario de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
+Informe diario de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube (Google Cloud Platform) para facilitar el manejo de los datos.
 
 ### Arquitectura del DAaaS
 *Arquitectura CLOUD basada en Scraping API + (Talend) + Google Coud Storage + HIVE + Dataproc*
