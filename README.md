@@ -2,14 +2,17 @@
 Big Data Architecture Repository
 
 ## Detalles de Práctica en Arquitectura
+
 Recomendador de Airbnb por Idealista.com para determinar las mejores zonas en Madrid para alquilar, comprar y/o compartir viviendas.
 
 ### Definición de la estrategia del DAaaS
+
 Estadística semanal por lotes de los pisos en mejor estado para alquilar, comprar o compartir de Airbnb en Madrid utilizando herramientas de la Nube para facilitar el manejo de los datos.
 Limpieza de datos (Talend Data Preparation)
 
 ### Arquitectura del DAaaS
-Arquitectura CLOUD basada en Scraping API + Google Coud Storage + HIVE + Dataproc
+
+Arquitectura CLOUD basada en Scraping API + (Talend) + Google Coud Storage + HIVE + Dataproc
 
 Se contemplan dos técnicas para el proceso de obtención de datos:
 
@@ -41,7 +44,7 @@ Seguire el estandar de levantar el cluster solamente cuando quiera regenerar el 
 Una vez concluidas dichas tareas, eliminaré el cluster.
 Web con un link directo a Google Storage Segment Object.
 
-#### Desarrollo
+### Desarrollo
 
 - Insertar el dataset de Airbnb en HIVE.
 
