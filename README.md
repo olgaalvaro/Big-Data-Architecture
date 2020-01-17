@@ -49,7 +49,8 @@ A continuación, se definene en Google Cloud Platform las siguientes tareas o jo
 
 - SELET JOIN INTO DIRECTORY 'gs//bdarchitecture_segidealista/output/ddmmYYYYhhmmresults.csv'
 
-Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores viviendas, se recomienda eliminar el clúster. 
+Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores viviendas, se recomienda eliminar el clúster, esta operativa también puede contemplarse mediante una tarea programada (cron) o desde Google Home mediante comando de voz "Google, elimina el clúster" o desde un dispositivo móvil con chatbot. 
+
 Web con un link directo en Google Storage Segment Object para la descarga del resultado o notificación por correo adjuntando dicha información.
 
 
