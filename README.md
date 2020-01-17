@@ -62,11 +62,10 @@ Web con un link directo a Google Storage Segment Object.
 
 
 ### Diagrama
+
 Diagrama del flujo de datos y herramientas utilizadas
-
-https://github.com/olgaalvaro/Big-Data-Architecture/blob/master/bdarquitecture.png
-
 https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
+https://drive.google.com/file/d/18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 
 
 ### Parte 2 
