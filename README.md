@@ -58,13 +58,12 @@ Web con un link directo a Google Storage Segment Object.
   https://colab.research.google.com/drive/145Od49s4Dx85yRQhUoAdAzXj9C5H5x6-
 
 - Query de HIVE
-- Pantallazo/video (parte 3 en adelante)
 
 
 ### Diagrama
 
-Diagrama del flujo de datos y herramientas utilizadas
-https://drive.google.com/open?id=18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
+Diagrama del flujo de datos y herramientas utilizadas:
+
 https://drive.google.com/file/d/18s0uLHJ2PrXpvivcAvhPk01FmX_kgTkO
 
 
