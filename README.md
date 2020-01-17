@@ -21,7 +21,7 @@ Enumeramos los pasos a seguir:
 
 - Insertar el dataset de Airbnb en HIVE mediante jobs o tareas.
 - Para el proceso de extracción de datos mediante las técnicas utilizadas en el apartado 2 aplicaré una Cloud Function.
-- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista). Previamente podemos proceder con la limpieza de los datos de ambos datasets, para así manejar datos de calidad en los siguientes pasos.
+- Almacenar tanto el dataset de Airbnb como el resultado del scraping a una API en un segmento de Google Cloud Storage llamado bdarchitecture_segidealista.  (enlace a gsutil gs://bdarchitecture_segidealista). Previamente podemos proceder con la limpieza de los datos de ambos datasets con Talend, para así manejar datos de calidad en los siguientes pasos.
 - Crear las tablas en HIVE, con los datos del dataset y los datos del fichero resultante de la parte nº 2.
 - Join entre ambos ficheros restando la longitud y latitud para obtener las mejores viviendas de airbnb más cercanas a las mejores zonas según el idealista, con el TOP de mejores viviendas de airbnb según un rango de importes por noche disponible en Google Cloud Storage para cubrir las necesidades de todos los clientes según sus posibilidades económicas.
 - Almacenar el resultado del TOP de las mejores viviendas en Google Cloud Storage para por ejemplo su notificación por correo y con la posibilidad de guardar un histórico de los TOPs por si se precisa un análisis más completo.
@@ -29,17 +29,25 @@ Enumeramos los pasos a seguir:
 
 ### Operating Model
 
-Existe un operador que dispara el Cloud Function cada mañana desde Google Home, con un mensaje "Google, adelante con el scrapy a la  API del idealista.com". Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input/idealista con formato csv.
+Se programa una operativa diaria a través de un cron para la creación/eliminación del cluster con la misma configuración mediante llamada API Rest o desde Cloud Shell. 
+Un operador disparará el Cloud Function desde el Cloud Function cada mañana desde Google Home, con el mensaje de voz "Google, adelante con el scrapy a la  API del idealista". Y esto disparará el Cloud Function y guardará el fichero resultante en un directorio del Segmento llamado input/idealista con formato csv.
 
-En el segmento **bdarchitecture_segidealista** siempre existirá un directorio llamado input_airbnb con el dataset de Airbnb de la muestra reducida y completa.
+También podriamos contemplar la posibilidad de realizar esta operativa desde un dispositivo movil con un chatbot integrado mediante comandos de voz o texto.
 
-Operativa diaria de creación del clúster para a continuación, ejecutar  las siguientes tareas:
+Previamente a almacenar ambos datasets en el mismo segmento Google Cloud Store, ralizaremos el perfilado de los datos con Talend para así obtener datasets con datos de calidad.
 
-- crear tabla de airbnb 
-- crear tabla de idealista
-- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input/idealista/ficheroparte2.csv' INTO TABLE idealista 
+En el segmento **bdarchitecture_segidealista** siempre existirá:
+- El directorio llamado input_airbnb con el dataset de Airbnb de la muestra reducida y completa enriquecida.
+- El directorio llamado input/idealista con el dataset resultante del punto 2 en formato ddmmyyyyapidealista.csv 
+
+A continuación, se definene en Google Cloud Platform las siguientes tareas o jobs en HIVE:
+
+- CREATE TABLE airbnb (....) 
 - LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input_airbnb/airbnb-listings.csv' INTO TABLE airbnb;
-- SELET JOIN INTO DIRECTORY 'gs//output/results'
+- CREATE TABLE idealista (...)
+- LOAD DATA INPATH  'gs://bdarchitecture_segidealista/input/idealista/ddmmYYYYhhmmapidealista.csv' INTO TABLE idealista 
+
+- SELET JOIN INTO DIRECTORY 'gs//bdarchitecture_segidealista/output/ddmmYYYYhhmmresults.csv'
 
 Una vez alcanzado el objetivo de obtener el informe con el TOP de las mejores viviendas, se recomienda eliminar el clúster. 
 Web con un link directo en Google Storage Segment Object para la descarga del resultado o notificación por correo adjuntando dicha información.
