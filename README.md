@@ -109,7 +109,7 @@ https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
 https://colab.research.google.com/drive/12Pyx_qLslp3eQpcterEVwCiW467Lrlbe
 
 
-### Parte 5 
+### Parte 5 (opcional)
 
 Utilizar HIVE/Elastic/Kafka/Mongo para insertar los datos extraídos durante el Sprint 2 y realizar operaciones con los mismos.
 Indicar los pasos y las decisiones de diseño respecto a cómo organizar los datos.
