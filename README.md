@@ -106,7 +106,7 @@ https://colab.research.google.com/drive/1erqopPNbPUoj3CioTtuH3TVR8HfuO7E9
 https://colab.research.google.com/drive/12Pyx_qLslp3eQpcterEVwCiW467Lrlbe
 
 
-### Parte 5 (opcional)
+### Parte 5 
 
 1. Utilizar HIVE para insertar los datos extraídos durante el Sprint 2 y realizar operaciones con los mismos.
 2. Crear una vista con el join entre las tablas de los datasets airbnb e idealista (producto cartesiano)
