@@ -68,7 +68,7 @@ Web con un link directo en Google Storage Segment Object para la descarga del re
   
   https://colab.research.google.com/drive/145Od49s4Dx85yRQhUoAdAzXj9C5H5x6-
 
-- Query de HIVE
+- Query de HIVE con un join entre ambas tablas está detallada en la parte 5 de la práctica.
 
 
 ### Diagrama
