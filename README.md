@@ -108,6 +108,9 @@ https://colab.research.google.com/drive/12Pyx_qLslp3eQpcterEVwCiW467Lrlbe
 
 ### Parte 5 (opcional)
 
-Utilizar HIVE/Elastic/Kafka/Mongo para insertar los datos extraídos durante el Sprint 2 y realizar operaciones con los mismos.
-Indicar los pasos y las decisiones de diseño respecto a cómo organizar los datos.
+1. Utilizar HIVE para insertar los datos extraídos durante el Sprint 2 y realizar operaciones con los mismos.
+2. Crear una vista con el join entre las tablas de los datasets airbnb e idealista (producto cartesiano)
+3. Obtener el top de las mejores viviendas de airbnb más cercanas a las mejores viviendas según API idealista con una simple query a la vista.
+4. Almacenar el resultado del top en el mismo segmento de Google Cloud Storage y ruta output
 
+https://colab.research.google.com/drive/18QjE3uieklHqOWbAkYDf5cTbsNYC1Asc
